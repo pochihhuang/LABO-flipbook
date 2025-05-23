@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flipbook</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/turn.js@4/turn.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #111;
+      height: 100%;
+      overflow: hidden;
+    }
+    #flipbook {
+      width: 90vw;
+      height: 90vh;
+      margin: auto;
+      position: relative;
+      top: 5vh;
+    }
+    .page {
+      width: 100%;
+      height: 100%;
+      background: white;
+    }
+    .page img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <div id="flipbook">
+    <!-- pages will be injected here -->
+  </div>
+
+  <script>
+    const totalPages = 17;
+
+    for (let i = 1; i <= totalPages; i++) {
+      $('#flipbook').append(
+        `<div class='page'><img src='pages/page${i}.jpg' alt='Page ${i}'></div>`
+      );
+    }
+
+    $('#flipbook').turn({
+      width: $("#flipbook").width(),
+      height: $("#flipbook").height(),
+      autoCenter: true,
+      elevation: 50,
+      gradients: true,
+      display: 'double',
+      acceleration: true
+    });
+  </script>
+</body>
+</html>
