@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Flipbook</title>
+  <style>
+    body { margin: 0; text-align: center; background: #111; }
+    img { width: 80%; height: auto; max-width: 800px; display: none; margin: auto; }
+    #controls { margin: 20px; }
+    button { padding: 10px 20px; margin: 0 10px; }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <button onclick="prevPage()">Previous</button>
+    <button onclick="nextPage()">Next</button>
+    <p>Page <span id="currentPage">1</span> of 17</p>
+  </div>
+  <div id="book">
+    <!-- Pages will be injected here -->
+  </div>
+  <script>
+    const totalPages = 17;
+    let currentPage = 1;
+
+    for (let i = 1; i <= totalPages; i++) {
+      const img = document.createElement('img');
+      img.src = `pages/page${i}.jpg`;
+      img.id = `page${i}`;
+      document.getElementById('book').appendChild(img);
+    }
+
+    function updatePage() {
+      for (let i = 1; i <= totalPages; i++) {
+        document.getElementById(`page${i}`).style.display = 'none';
+      }
+      document.getElementById(`page${currentPage}`).style.display = 'block';
+      document.getElementById('currentPage').innerText = currentPage;
+    }
+
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        updatePage();
+      }
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages) {
+        currentPage++;
+        updatePage();
+      }
+    }
+
+    updatePage(); // show first page on load
+  </script>
+</body>
+</html>
