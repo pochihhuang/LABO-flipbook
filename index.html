@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LABO Flipbook</title>
+    <style>
+        body { margin: 0; background: #222; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        #flipbook { width: 100vw; height: 100vh; }
+        canvas { box-shadow: 0 0 20px #000; }
+    </style>
+</head>
+<body>
+    <div id="flipbook"></div>
+    <script src="https://cdn.jsdelivr.net/npm/stpageflip@2.0.0/dist/js/stpageflip.min.js"></script>
+    <script>
+        const pages = [
+            "images/page1.jpg",
+            "images/page2.jpg",
+            "images/page3.jpg",
+            "images/page4.jpg",
+            "images/page5.jpg",
+            "images/page6.jpg",
+            "images/page7.jpg",
+            "images/page8.jpg",
+            "images/page9.jpg",
+            "images/page10.jpg",
+            "images/page11.jpg",
+            "images/page12.jpg",
+            "images/page13.jpg",
+            "images/page14.jpg",
+            "images/page15.jpg",
+            "images/page16.jpg",
+            "images/page17.jpg"
+        ];
+
+        const flipbook = document.getElementById("flipbook");
+        const pageFlip = new St.PageFlip(flipbook, {
+            width: 800,
+            height: 600,
+            size: "stretch",
+            showCover: false,
+            useMouseEvents: true,
+            mobileScrollSupport: false,
+            maxShadowOpacity: 0.5,
+            startPage: 0,
+            drawShadow: true,
+        });
+
+        pageFlip.loadFromImages(pages);
+    </script>
+</body>
+</html>
