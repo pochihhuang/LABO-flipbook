@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LABO Flipbook Zoom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #111;
+        }
+        .swiper {
+            width: 100vw;
+            height: 100vh;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #111;
+        }
+        .swiper-zoom-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page01.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page02.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page03.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page04.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page05.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page06.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page07.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page08.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page09.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page10.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page11.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page12.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page13.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page14.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page15.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page16.jpg" alt="Page"></div></div><div class="swiper-slide"><div class="swiper-zoom-container"><img src="images/page17.jpg" alt="Page"></div></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: false,
+            zoom: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>
