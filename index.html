@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LABO Flipbook Zoom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #111;
+        }
+        .swiper {
+            width: 100vw;
+            height: 100vh;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #111;
+        }
+        .swiper-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            cursor: zoom-in;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="images/page01.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page01.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page02.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page02.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page03.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page03.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page04.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page04.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page05.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page05.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page06.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page06.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page07.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page07.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page08.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page08.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page09.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page09.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page10.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page10.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page11.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page11.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page12.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page12.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page13.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page13.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page14.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page14.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page15.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page15.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page16.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page16.jpg" alt="Page"></a></div><div class="swiper-slide"><a href="images/page17.jpg" data-pswp-width="1000" data-pswp-height="1400"><img src="images/page17.jpg" alt="Page"></a></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.min.js" type="module"></script>
+    <script type="module">
+        const swiper = new Swiper('.swiper', {
+            loop: false,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '.swiper-wrapper',
+            children: 'a',
+            pswpModule: () => import('https://unpkg.com/photoswipe@5/dist/photoswipe.esm.js')
+        });
+        lightbox.init();
+    </script>
+</body>
+</html>
